@@ -10,8 +10,6 @@ services:
       - "8080:8000"
     volumes:
       - .:/var/www/html
-      - ./storage:/var/www/html/storage
-      - /var/www/html/vendor
     environment:
       - APP_ENV=local
       - APP_DEBUG=true

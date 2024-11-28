@@ -4,4 +4,4 @@
 sudo docker-compose stop || true
 
 # Remover conteineres se eles existirem
-sudo docker rm php-apache mysql || true
+sudo docker rm laravel-app mysql || true
