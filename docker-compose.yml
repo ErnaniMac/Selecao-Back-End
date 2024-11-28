@@ -7,9 +7,11 @@ services:
       dockerfile: Dockerfile
     container_name: laravel-app
     ports:
-      - "8080:8000"  # Mapeia a porta do servidor Laravel para o host
+      - "8080:8000"
     volumes:
       - .:/var/www/html
+      - ./storage:/var/www/html/storage
+      - /var/www/html/vendor
     environment:
       - APP_ENV=local
       - APP_DEBUG=true

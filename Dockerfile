@@ -33,5 +33,8 @@ RUN composer install
 # Expor a porta 8000
 EXPOSE 8000
 
-# Comando para iniciar o servidor embutido do Laravel
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
+# Garantir execução como www-data
+USER www-data
+
+# Comando para iniciar o servidor Laravel
+CMD ["sh", "-c", "php artisan key:generate --force && php artisan serve --host=0.0.0.0 --port=8000"]
